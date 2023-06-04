@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forms",
+  "info": {
+    "singularName": "form",
+    "pluralName": "forms",
+    "displayName": "FormManager_Form"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "pluginOptions": {
+    "content-type-builder": {
+      "visible": true
+    }
+  },
+  "attributes": {
+    "displayName": {
+      "type": "string"
+    },
+    "internalName": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::form-manager.form-field",
+      "mappedBy": "form"
+    },
+    "submissions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::form-manager.form-manager-submission",
+      "mappedBy": "form"
+    }
+  }
+}

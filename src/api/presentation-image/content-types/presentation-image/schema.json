@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "presentation_images",
+  "info": {
+    "singularName": "presentation-image",
+    "pluralName": "presentation-images",
+    "displayName": "Presentation Image"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Gallery": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}
