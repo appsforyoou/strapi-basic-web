@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_solo_blocks_section_headers",
+  "info": {
+    "displayName": "Section header"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "text-components.h1"
+    },
+    "text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "text-components.paragraph"
+    }
+  }
+}

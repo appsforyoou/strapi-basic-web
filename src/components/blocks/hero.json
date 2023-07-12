@@ -27,6 +27,12 @@
       "type": "component",
       "repeatable": true,
       "component": "components.button"
+    },
+    "theme": {
+      "type": "integer",
+      "min": 1,
+      "required": true,
+      "default": 1
     }
   }
 }

@@ -1,12 +1,17 @@
 {
   "collectionName": "components_text_components_paragraphs",
   "info": {
-    "displayName": "Paragraph"
+    "displayName": "Paragraph",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "text": {
       "type": "text"
+    },
+    "justify": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

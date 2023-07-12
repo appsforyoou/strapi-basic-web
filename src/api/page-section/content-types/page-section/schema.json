@@ -38,7 +38,9 @@
       },
       "type": "dynamiczone",
       "components": [
-        "blocks.hero"
+        "blocks.hero",
+        "blocks.review-slideshow",
+        "blocks.services"
       ]
     },
     "sectionType": {

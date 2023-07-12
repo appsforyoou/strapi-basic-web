@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_review_slideshows",
+  "info": {
+    "displayName": "ReviewSlideshow"
+  },
+  "options": {},
+  "attributes": {
+    "displayPerPage": {
+      "type": "integer",
+      "min": 1
+    },
+    "random": {
+      "type": "boolean",
+      "default": false
+    },
+    "reviewCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "solo-blocks.review-card"
+    }
+  }
+}
