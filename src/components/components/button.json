@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_buttons",
+  "info": {
+    "displayName": "Button"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "displayName": "link",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

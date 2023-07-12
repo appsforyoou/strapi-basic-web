@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_utility_api_data",
+  "info": {
+    "displayName": "apiData",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "path": {
+      "type": "string",
+      "required": true
+    },
+    "defaultResultsPerPage": {
+      "type": "integer",
+      "default": 10,
+      "max": 50
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_navigations",
+  "info": {
+    "singularName": "main-navigation",
+    "pluralName": "main-navigations",
+    "displayName": "Main Navigation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.link",
+      "required": true
+    }
+  }
+}
