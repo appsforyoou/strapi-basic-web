@@ -8,10 +8,11 @@
   "attributes": {
     "metaTitle": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "metaDescription": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "meta": {
       "type": "component",
@@ -20,17 +21,19 @@
     },
     "preventIndexing": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "required": true
     },
     "structuredData": {
       "type": "json"
     },
     "metaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
