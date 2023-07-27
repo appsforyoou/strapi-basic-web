@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_service_thumbnail_icons",
+  "info": {
+    "displayName": "icon"
+  },
+  "options": {},
+  "attributes": {
+    "iconName": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

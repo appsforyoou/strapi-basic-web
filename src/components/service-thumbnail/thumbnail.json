@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_service_thumbnail_thumbnails",
+  "info": {
+    "displayName": "thumbnail"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
