@@ -10,7 +10,11 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "blocks": {
       "type": "dynamiczone",
@@ -19,7 +23,12 @@
         "blocks.review-slideshow",
         "blocks.services",
         "footer-blocks.links"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
