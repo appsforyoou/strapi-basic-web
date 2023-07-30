@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_links_boxes",
+  "info": {
+    "displayName": "Links Box",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

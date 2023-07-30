@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_footer_blocks_links",
+  "info": {
+    "displayName": "Links"
+  },
+  "options": {},
+  "attributes": {
+    "linksSections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.links-box"
+    }
+  }
+}
