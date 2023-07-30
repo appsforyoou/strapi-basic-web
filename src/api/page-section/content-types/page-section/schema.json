@@ -40,7 +40,9 @@
       "components": [
         "blocks.hero",
         "blocks.review-slideshow",
-        "blocks.services"
+        "blocks.services",
+        "blocks.fotoalbum",
+        "blocks.testimonials"
       ]
     },
     "positionIndex": {
