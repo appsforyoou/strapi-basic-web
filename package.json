@@ -9,12 +9,10 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
     "@strapi/plugin-i18n": "4.11.4",
     "@strapi/plugin-users-permissions": "4.11.4",
     "@strapi/strapi": "4.11.4",
-    "form-manager": "https://github.com/appsforyoou/strapi-form-manager.git",
     "mysql": "2.18.1"
   },
   "author": {
@@ -24,8 +22,12 @@
     "uuid": "139d606b-6ee9-434f-abea-d4490af0fc12"
   },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=16.20.0 <=18.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "yarn@4.0.0",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
 }
