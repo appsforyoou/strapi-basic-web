@@ -12754,9 +12754,17 @@ __metadata:
     "@strapi/plugin-users-permissions": "npm:4.11.4"
     "@strapi/strapi": "npm:4.11.4"
     mysql: "npm:2.18.1"
+    strapi-plugin-populate-deep: "npm:^3.0.0"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
+
+"strapi-plugin-populate-deep@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "strapi-plugin-populate-deep@npm:3.0.0"
+  checksum: 3654dc09754cd75e2a0457e9916abb0d9ce6da680418eb470f219387787b89dbfadb07f2e2659f46630fdd3e627370afb412413b40a3857940d0cfa5c524609d
+  languageName: node
+  linkType: hard
 
 "stream-chain@npm:2.2.5, stream-chain@npm:^2.2.5":
   version: 2.2.5
