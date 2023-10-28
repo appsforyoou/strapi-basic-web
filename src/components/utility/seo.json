@@ -6,11 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
-      "type": "string",
-      "required": true
-    },
-    "metaDescription": {
+    "description": {
       "type": "text",
       "required": true
     },
@@ -19,21 +15,21 @@
       "repeatable": true,
       "component": "utility.seo-meta"
     },
-    "preventIndexing": {
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
     "structuredData": {
       "type": "json"
     },
-    "metaImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+    "opengraph": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utility.open-graph"
+    },
+    "robots": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utility.seo-robots"
+    },
+    "category": {
+      "type": "string"
     }
   }
 }

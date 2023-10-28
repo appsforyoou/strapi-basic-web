@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_utility_open_graphs",
+  "info": {
+    "displayName": "Open Graph",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "siteName": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "locale": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

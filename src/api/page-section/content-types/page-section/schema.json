@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "htmlId": {
+    "key": {
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -38,23 +38,8 @@
       },
       "type": "dynamiczone",
       "components": [
-        "blocks.hero",
-        "blocks.review-slideshow",
-        "blocks.services",
-        "blocks.fotoalbum",
-        "blocks.testimonials"
+        "blocks.default-block"
       ]
-    },
-    "positionIndex": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "integer",
-      "required": true,
-      "unique": false,
-      "min": 0
     }
   }
 }

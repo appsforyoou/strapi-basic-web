@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_utility_seo_robots",
+  "info": {
+    "displayName": "SEO Robots"
+  },
+  "options": {},
+  "attributes": {
+    "index": {
+      "type": "boolean",
+      "default": true
+    },
+    "follow": {
+      "type": "boolean",
+      "default": true
+    },
+    "nocache": {
+      "type": "boolean"
+    }
+  }
+}

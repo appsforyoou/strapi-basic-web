@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_default_blocks",
+  "info": {
+    "displayName": "Default Block",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "default": {
+      "type": "string"
+    }
+  }
+}

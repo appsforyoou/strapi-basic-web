@@ -1,0 +1,178 @@
+import type { Schema, Attribute } from '@strapi/strapi';
+
+export interface BlocksDefaultBlock extends Schema.Component {
+  collectionName: 'components_blocks_default_blocks';
+  info: {
+    displayName: 'Default Block';
+    icon: 'layer';
+  };
+  attributes: {
+    default: Attribute.String;
+  };
+}
+
+export interface ComponentsButton extends Schema.Component {
+  collectionName: 'components_components_buttons';
+  info: {
+    displayName: 'Button';
+  };
+  attributes: {
+    link: Attribute.Component<'components.link'>;
+  };
+}
+
+export interface ComponentsLink extends Schema.Component {
+  collectionName: 'components_components_links';
+  info: {
+    displayName: 'link';
+    description: '';
+  };
+  attributes: {
+    href: Attribute.Text & Attribute.Required;
+    label: Attribute.String & Attribute.Required;
+    target: Attribute.Enumeration<['_blank', '_self', '_parent', '_top']>;
+  };
+}
+
+export interface ComponentsLinksBox extends Schema.Component {
+  collectionName: 'components_components_links_boxes';
+  info: {
+    displayName: 'Links Box';
+    description: '';
+  };
+  attributes: {
+    links: Attribute.Component<'components.link', true> & Attribute.Required;
+    title: Attribute.String;
+  };
+}
+
+export interface FooterBlocksLinks extends Schema.Component {
+  collectionName: 'components_footer_blocks_links';
+  info: {
+    displayName: 'Links';
+  };
+  attributes: {
+    linksSections: Attribute.Component<'components.links-box', true>;
+  };
+}
+
+export interface TextComponentsH1 extends Schema.Component {
+  collectionName: 'components_text_components_h1s';
+  info: {
+    displayName: 'hTag';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+    type: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 6;
+      }> &
+      Attribute.DefaultTo<1>;
+  };
+}
+
+export interface TextComponentsParagraph extends Schema.Component {
+  collectionName: 'components_text_components_paragraphs';
+  info: {
+    displayName: 'Paragraph';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.Text;
+    justify: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface UtilityApiData extends Schema.Component {
+  collectionName: 'components_utility_api_data';
+  info: {
+    displayName: 'apiData';
+    description: '';
+  };
+  attributes: {
+    path: Attribute.String & Attribute.Required;
+    defaultResultsPerPage: Attribute.Integer &
+      Attribute.SetMinMax<{
+        max: 50;
+      }> &
+      Attribute.DefaultTo<10>;
+  };
+}
+
+export interface UtilityOpenGraph extends Schema.Component {
+  collectionName: 'components_utility_open_graphs';
+  info: {
+    displayName: 'Open Graph';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+    siteName: Attribute.String;
+    images: Attribute.Media;
+    locale: Attribute.String;
+    type: Attribute.String;
+  };
+}
+
+export interface UtilitySeoMeta extends Schema.Component {
+  collectionName: 'components_utility_seo_metas';
+  info: {
+    displayName: 'SEO-Meta';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    content: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface UtilitySeoRobots extends Schema.Component {
+  collectionName: 'components_utility_seo_robots';
+  info: {
+    displayName: 'SEO Robots';
+  };
+  attributes: {
+    index: Attribute.Boolean & Attribute.DefaultTo<true>;
+    follow: Attribute.Boolean & Attribute.DefaultTo<true>;
+    nocache: Attribute.Boolean;
+  };
+}
+
+export interface UtilitySeo extends Schema.Component {
+  collectionName: 'components_utility_seos';
+  info: {
+    displayName: 'SEO';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text & Attribute.Required;
+    meta: Attribute.Component<'utility.seo-meta', true>;
+    structuredData: Attribute.JSON;
+    opengraph: Attribute.Component<'utility.open-graph'>;
+    robots: Attribute.Component<'utility.seo-robots'>;
+    category: Attribute.String;
+  };
+}
+
+declare module '@strapi/types' {
+  export module Shared {
+    export interface Components {
+      'blocks.default-block': BlocksDefaultBlock;
+      'components.button': ComponentsButton;
+      'components.link': ComponentsLink;
+      'components.links-box': ComponentsLinksBox;
+      'footer-blocks.links': FooterBlocksLinks;
+      'text-components.h1': TextComponentsH1;
+      'text-components.paragraph': TextComponentsParagraph;
+      'utility.api-data': UtilityApiData;
+      'utility.open-graph': UtilityOpenGraph;
+      'utility.seo-meta': UtilitySeoMeta;
+      'utility.seo-robots': UtilitySeoRobots;
+      'utility.seo': UtilitySeo;
+    }
+  }
+}
