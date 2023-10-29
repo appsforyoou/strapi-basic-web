@@ -2,23 +2,47 @@ import https from 'http';
 
 export default {
   afterCreate() {
-    https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    try {
+      https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    } catch (error) {
+      console.error(error);
+    }
   },
   afterCreateMany() {
-    https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    try {
+      https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    } catch (error) {
+      console.error(error);
+    }
   },
 
   afterUpdate() {
-    https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    try {
+      https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    } catch (error) {
+      console.error(error);
+    }
   },
   afterUpdateMany() {
-    https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    try {
+      https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    } catch (error) {
+      console.error(error);
+    }
   },
 
   afterDelete() {
-    https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    try {
+      https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    } catch (error) {
+      console.error(error);
+    }
   },
   afterDeleteMany() {
-    https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    try {
+      https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=websiteLogo&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    } catch (error) {
+      console.error(error);
+    }
   },
 }
