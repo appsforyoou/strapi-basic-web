@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_logos",
+  "info": {
+    "singularName": "website-logo",
+    "pluralName": "website-logos",
+    "displayName": "Website Logo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    }
+  }
+}

@@ -932,6 +932,53 @@ export interface ApiPrivacyNoticePrivacyNotice extends Schema.SingleType {
   };
 }
 
+export interface ApiWebsiteLogoWebsiteLogo extends Schema.SingleType {
+  collectionName: 'website_logos';
+  info: {
+    singularName: 'website-logo';
+    pluralName: 'website-logos';
+    displayName: 'Website Logo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    logo: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::website-logo.website-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::website-logo.website-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::website-logo.website-logo',
+      'oneToMany',
+      'api::website-logo.website-logo'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -953,6 +1000,7 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::page-section.page-section': ApiPageSectionPageSection;
       'api::privacy-notice.privacy-notice': ApiPrivacyNoticePrivacyNotice;
+      'api::website-logo.website-logo': ApiWebsiteLogoWebsiteLogo;
     }
   }
 }
