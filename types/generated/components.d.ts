@@ -15,9 +15,12 @@ export interface ComponentsButton extends Schema.Component {
   collectionName: 'components_components_buttons';
   info: {
     displayName: 'Button';
+    description: '';
   };
   attributes: {
     link: Attribute.Component<'components.link'>;
+    icon: Attribute.String;
+    iconOnly: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
