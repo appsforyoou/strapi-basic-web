@@ -932,6 +932,52 @@ export interface ApiPrivacyNoticePrivacyNotice extends Schema.SingleType {
   };
 }
 
+export interface ApiSocialLinkSocialLink extends Schema.SingleType {
+  collectionName: 'social_links';
+  info: {
+    singularName: 'social-link';
+    pluralName: 'social-links';
+    displayName: 'Social Links';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    links: Attribute.Component<'components.button', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-link.social-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-link.social-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::social-link.social-link',
+      'oneToMany',
+      'api::social-link.social-link'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiWebsiteLogoWebsiteLogo extends Schema.SingleType {
   collectionName: 'website_logos';
   info: {
@@ -1000,6 +1046,7 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::page-section.page-section': ApiPageSectionPageSection;
       'api::privacy-notice.privacy-notice': ApiPrivacyNoticePrivacyNotice;
+      'api::social-link.social-link': ApiSocialLinkSocialLink;
       'api::website-logo.website-logo': ApiWebsiteLogoWebsiteLogo;
     }
   }
