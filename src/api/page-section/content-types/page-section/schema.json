@@ -22,13 +22,15 @@
           "localized": false
         }
       },
-      "type": "string"
+      "type": "string",
+      "configurable": false
     },
     "page": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::page.page",
-      "inversedBy": "page_sections"
+      "inversedBy": "page_sections",
+      "configurable": false
     },
     "blocks": {
       "pluginOptions": {
@@ -39,7 +41,8 @@
       "type": "dynamiczone",
       "components": [
         "blocks.default-block"
-      ]
+      ],
+      "configurable": false
     }
   }
 }

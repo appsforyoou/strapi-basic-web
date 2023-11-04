@@ -26,7 +26,8 @@
           "localized": true
         }
       },
-      "required": true
+      "required": true,
+      "configurable": false
     }
   }
 }

@@ -10,14 +10,17 @@
       "displayName": "link",
       "type": "component",
       "repeatable": false,
-      "component": "components.link"
+      "component": "components.link",
+      "configurable": false
     },
     "icon": {
-      "type": "string"
+      "type": "string",
+      "configurable": false
     },
     "iconOnly": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "configurable": false
     }
   }
 }

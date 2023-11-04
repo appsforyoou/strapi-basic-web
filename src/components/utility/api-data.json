@@ -8,12 +8,14 @@
   "attributes": {
     "path": {
       "type": "string",
-      "required": true
+      "required": true,
+      "configurable": false
     },
     "defaultResultsPerPage": {
       "type": "integer",
       "default": 10,
-      "max": 50
+      "max": 50,
+      "configurable": false
     }
   }
 }

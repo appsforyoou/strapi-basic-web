@@ -8,18 +8,22 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "configurable": false
     },
     "description": {
       "type": "text",
-      "required": true
+      "required": true,
+      "configurable": false
     },
     "url": {
       "type": "string",
-      "required": true
+      "required": true,
+      "configurable": false
     },
     "siteName": {
-      "type": "string"
+      "type": "string",
+      "configurable": false
     },
     "images": {
       "type": "media",
@@ -27,13 +31,16 @@
       "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "configurable": false
     },
     "locale": {
-      "type": "string"
+      "type": "string",
+      "configurable": false
     },
     "type": {
-      "type": "string"
+      "type": "string",
+      "configurable": false
     }
   }
 }

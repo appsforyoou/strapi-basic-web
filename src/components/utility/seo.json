@@ -8,28 +8,34 @@
   "attributes": {
     "description": {
       "type": "text",
-      "required": true
+      "required": true,
+      "configurable": false
     },
     "meta": {
       "type": "component",
       "repeatable": true,
-      "component": "utility.seo-meta"
+      "component": "utility.seo-meta",
+      "configurable": false
     },
     "structuredData": {
-      "type": "json"
+      "type": "json",
+      "configurable": false
     },
     "opengraph": {
       "type": "component",
       "repeatable": false,
-      "component": "utility.open-graph"
+      "component": "utility.open-graph",
+      "configurable": false
     },
     "robots": {
       "type": "component",
       "repeatable": false,
-      "component": "utility.seo-robots"
+      "component": "utility.seo-robots",
+      "configurable": false
     },
     "category": {
-      "type": "string"
+      "type": "string",
+      "configurable": false
     }
   }
 }

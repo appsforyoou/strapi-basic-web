@@ -23,7 +23,8 @@
           "localized": true
         }
       },
-      "component": "components.button"
+      "component": "components.button",
+      "configurable": false
     }
   }
 }

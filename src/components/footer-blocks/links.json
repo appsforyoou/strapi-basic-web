@@ -8,7 +8,8 @@
     "linksSections": {
       "type": "component",
       "repeatable": true,
-      "component": "components.links-box"
+      "component": "components.links-box",
+      "configurable": false
     }
   }
 }

@@ -7,11 +7,13 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "configurable": false
     },
     "content": {
       "type": "text",
-      "required": true
+      "required": true,
+      "configurable": false
     }
   }
 }

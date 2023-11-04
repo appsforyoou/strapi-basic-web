@@ -24,7 +24,8 @@
         }
       },
       "component": "components.link",
-      "required": true
+      "required": true,
+      "configurable": false
     }
   }
 }

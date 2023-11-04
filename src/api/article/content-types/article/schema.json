@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "pages",
+  "collectionName": "articles",
   "info": {
-    "singularName": "page",
-    "pluralName": "pages",
-    "displayName": "Pages",
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
     "description": ""
   },
   "options": {
@@ -26,16 +26,6 @@
       "required": true,
       "configurable": false
     },
-    "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "unique": true,
-      "configurable": false
-    },
     "seo": {
       "type": "component",
       "repeatable": false,
@@ -47,11 +37,37 @@
       "component": "utility.seo",
       "configurable": false
     },
-    "page_sections": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::page-section.page-section",
-      "mappedBy": "page",
+    "body": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext",
+      "configurable": false
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "configurable": false
+    },
+    "timesViewed": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
       "configurable": false
     }
   }

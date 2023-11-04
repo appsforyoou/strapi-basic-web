@@ -7,14 +7,17 @@
   "attributes": {
     "index": {
       "type": "boolean",
-      "default": true
+      "default": true,
+      "configurable": false
     },
     "follow": {
       "type": "boolean",
-      "default": true
+      "default": true,
+      "configurable": false
     },
     "nocache": {
-      "type": "boolean"
+      "type": "boolean",
+      "configurable": false
     }
   }
 }
