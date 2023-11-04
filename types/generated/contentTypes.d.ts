@@ -1097,6 +1097,35 @@ export interface ApiWebsiteLogoWebsiteLogo extends Schema.SingleType {
   };
 }
 
+export interface ApiWebsiteSettingWebsiteSetting extends Schema.SingleType {
+  collectionName: 'website_settings';
+  info: {
+    singularName: 'website-setting';
+    pluralName: 'website-settings';
+    displayName: 'Website Settings';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    maintenanceMode: Attribute.Boolean & Attribute.DefaultTo<false>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::website-setting.website-setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::website-setting.website-setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1121,6 +1150,7 @@ declare module '@strapi/types' {
       'api::privacy-notice.privacy-notice': ApiPrivacyNoticePrivacyNotice;
       'api::social-link.social-link': ApiSocialLinkSocialLink;
       'api::website-logo.website-logo': ApiWebsiteLogoWebsiteLogo;
+      'api::website-setting.website-setting': ApiWebsiteSettingWebsiteSetting;
     }
   }
 }
