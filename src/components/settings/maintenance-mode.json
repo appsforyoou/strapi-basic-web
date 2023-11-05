@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_settings_maintenance_modes",
+  "info": {
+    "displayName": "Maintenance mode",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": false,
+      "required": true,
+      "configurable": false
+    },
+    "accessSecret": {
+      "type": "password",
+      "default": "changeMe",
+      "required": true,
+      "configurable": false
+    }
+  }
+}

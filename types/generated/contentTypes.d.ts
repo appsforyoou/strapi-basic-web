@@ -1103,12 +1103,13 @@ export interface ApiWebsiteSettingWebsiteSetting extends Schema.SingleType {
     singularName: 'website-setting';
     pluralName: 'website-settings';
     displayName: 'Website Settings';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    maintenanceMode: Attribute.Boolean & Attribute.DefaultTo<false>;
+    maintenanceMode: Attribute.Component<'settings.maintenance-mode'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

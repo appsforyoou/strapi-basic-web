@@ -59,6 +59,22 @@ export interface FooterBlocksLinks extends Schema.Component {
   };
 }
 
+export interface SettingsMaintenanceMode extends Schema.Component {
+  collectionName: 'components_settings_maintenance_modes';
+  info: {
+    displayName: 'Maintenance mode';
+    description: '';
+  };
+  attributes: {
+    enabled: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    accessSecret: Attribute.Password &
+      Attribute.Required &
+      Attribute.DefaultTo<'changeMe'>;
+  };
+}
+
 export interface TextComponentsH1 extends Schema.Component {
   collectionName: 'components_text_components_h1s';
   info: {
@@ -169,6 +185,7 @@ declare module '@strapi/types' {
       'components.link': ComponentsLink;
       'components.links-box': ComponentsLinksBox;
       'footer-blocks.links': FooterBlocksLinks;
+      'settings.maintenance-mode': SettingsMaintenanceMode;
       'text-components.h1': TextComponentsH1;
       'text-components.paragraph': TextComponentsParagraph;
       'utility.api-data': UtilityApiData;
