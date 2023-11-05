@@ -13,7 +13,7 @@
       "configurable": false
     },
     "accessSecret": {
-      "type": "password",
+      "type": "string",
       "default": "changeMe",
       "required": true,
       "configurable": false

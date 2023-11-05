@@ -69,7 +69,7 @@ export interface SettingsMaintenanceMode extends Schema.Component {
     enabled: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
-    accessSecret: Attribute.Password &
+    accessSecret: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'changeMe'>;
   };
