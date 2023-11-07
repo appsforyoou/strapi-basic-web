@@ -1,40 +1,41 @@
-import https from 'http';
+import httpAdapter from '../../../../helpers/httpAdapter';
+import { revalidatePath } from '../../../../helpers/utils';
 
 export default {
   afterCreate() {
-    const req = https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
   afterCreateMany() {
-    const req = https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
 
   afterUpdate() {
-    const req = https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
   afterUpdateMany() {
-    const req = https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
 
   afterDelete() {
-    const req = https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
   afterDeleteMany() {
-    const req = https.get(`${process.env.NEXTJS_REVALIDATE_TAG_PATH}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=mainNavigation&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
