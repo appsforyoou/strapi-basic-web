@@ -494,7 +494,7 @@ export interface PluginStrapiFormManagerFormSetting extends Schema.SingleType {
     comment: '';
   };
   attributes: {
-    notifyEmail: Attribute.Text;
+    notifyEmail: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
