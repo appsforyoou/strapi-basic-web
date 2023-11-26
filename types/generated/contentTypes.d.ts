@@ -482,137 +482,29 @@ export interface PluginUploadFolder extends Schema.CollectionType {
   };
 }
 
-export interface PluginStrapiFormManagerForm extends Schema.CollectionType {
-  collectionName: 'forms';
+export interface PluginStrapiFormManagerFormSetting extends Schema.SingleType {
+  collectionName: 'form_settings';
   info: {
-    singularName: 'form';
-    pluralName: 'forms';
-    displayName: 'FormManager_Form';
-  };
-  options: {
-    draftAndPublish: false;
-    comment: '';
-  };
-  pluginOptions: {
-    'content-type-builder': {
-      visible: true;
-    };
-  };
-  attributes: {
-    displayName: Attribute.String;
-    internalName: Attribute.String;
-    fields: Attribute.Relation<
-      'plugin::strapi-form-manager.form',
-      'oneToMany',
-      'plugin::strapi-form-manager.form-field'
-    >;
-    submissions: Attribute.Relation<
-      'plugin::strapi-form-manager.form',
-      'oneToMany',
-      'plugin::strapi-form-manager.form-manager-submission'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::strapi-form-manager.form',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::strapi-form-manager.form',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface PluginStrapiFormManagerFormField
-  extends Schema.CollectionType {
-  collectionName: 'form_fields';
-  info: {
-    singularName: 'form-field';
-    pluralName: 'form-fields';
-    displayName: 'FormManager_Field';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    displayName: Attribute.String & Attribute.Required;
-    internalName: Attribute.String;
-    honeyPotName: Attribute.String;
-    type: Attribute.Enumeration<
-      [
-        'text',
-        'textarea',
-        'number',
-        'date',
-        'time',
-        'datetime',
-        'select',
-        'multiselect'
-      ]
-    > &
-      Attribute.Required;
-    selectOptions: Attribute.JSON;
-    form: Attribute.Relation<
-      'plugin::strapi-form-manager.form-field',
-      'manyToOne',
-      'plugin::strapi-form-manager.form'
-    >;
-    required: Attribute.Boolean & Attribute.DefaultTo<false>;
-    displayInSubmissionTable: Attribute.Boolean & Attribute.DefaultTo<true>;
-    adminPanelIndex: Attribute.Integer;
-    unique: Attribute.Boolean & Attribute.DefaultTo<false>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::strapi-form-manager.form-field',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::strapi-form-manager.form-field',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface PluginStrapiFormManagerFormManagerSubmission
-  extends Schema.CollectionType {
-  collectionName: 'form_manager_submissions';
-  info: {
-    singularName: 'form-manager-submission';
-    pluralName: 'form-manager-submissions';
-    displayName: 'FormManager_Submissions';
+    singularName: 'form-setting';
+    pluralName: 'form-settings';
+    displayName: 'Form Settings';
   };
   options: {
     draftAndPublish: false;
     comment: '';
   };
   attributes: {
-    form: Attribute.Relation<
-      'plugin::strapi-form-manager.form-manager-submission',
-      'manyToOne',
-      'plugin::strapi-form-manager.form'
-    >;
-    data: Attribute.JSON & Attribute.Required;
+    notifyEmail: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'plugin::strapi-form-manager.form-manager-submission',
+      'plugin::strapi-form-manager.form-setting',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'plugin::strapi-form-manager.form-manager-submission',
+      'plugin::strapi-form-manager.form-setting',
       'oneToOne',
       'admin::user'
     > &
@@ -1277,9 +1169,7 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
-      'plugin::strapi-form-manager.form': PluginStrapiFormManagerForm;
-      'plugin::strapi-form-manager.form-field': PluginStrapiFormManagerFormField;
-      'plugin::strapi-form-manager.form-manager-submission': PluginStrapiFormManagerFormManagerSubmission;
+      'plugin::strapi-form-manager.form-setting': PluginStrapiFormManagerFormSetting;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
