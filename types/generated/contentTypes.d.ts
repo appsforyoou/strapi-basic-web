@@ -494,7 +494,7 @@ export interface PluginStrapiFormManagerFormSetting extends Schema.SingleType {
     comment: '';
   };
   attributes: {
-    notifyEmail: Attribute.String;
+    notifyServices: Attribute.Component<'form-manager.notify-service', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -505,6 +505,76 @@ export interface PluginStrapiFormManagerFormSetting extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'plugin::strapi-form-manager.form-setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface PluginStrapiFormManagerFmForm extends Schema.CollectionType {
+  collectionName: 'fm_forms';
+  info: {
+    singularName: 'fm-form';
+    pluralName: 'fm-forms';
+    displayName: 'Forms';
+  };
+  options: {
+    draftAndPublish: false;
+    comment: '';
+  };
+  attributes: {
+    key: Attribute.String;
+    displayName: Attribute.String;
+    notifyService: Attribute.Component<'form-manager.notify-service-sel', true>;
+    fields: Attribute.Component<'form-manager.form-field', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::strapi-form-manager.fm-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::strapi-form-manager.fm-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface PluginStrapiFormManagerFmFormSub
+  extends Schema.CollectionType {
+  collectionName: 'fm_form_subs';
+  info: {
+    singularName: 'fm-form-sub';
+    pluralName: 'fm-form-subs';
+    displayName: 'Form Submissions';
+  };
+  options: {
+    draftAndPublish: false;
+    comment: '';
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+  };
+  attributes: {
+    formKey: Attribute.String;
+    data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::strapi-form-manager.fm-form-sub',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::strapi-form-manager.fm-form-sub',
       'oneToOne',
       'admin::user'
     > &
@@ -1170,6 +1240,8 @@ declare module '@strapi/types' {
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::strapi-form-manager.form-setting': PluginStrapiFormManagerFormSetting;
+      'plugin::strapi-form-manager.fm-form': PluginStrapiFormManagerFmForm;
+      'plugin::strapi-form-manager.fm-form-sub': PluginStrapiFormManagerFmFormSub;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;

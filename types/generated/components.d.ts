@@ -177,6 +177,55 @@ export interface UtilitySeo extends Schema.Component {
   };
 }
 
+export interface FormManagerFormField extends Schema.Component {
+  collectionName: 'components_form_manager_form_fields';
+  info: {
+    displayName: 'Form Field';
+    icon: 'file';
+  };
+  attributes: {
+    key: Attribute.String & Attribute.Required;
+    displayName: Attribute.String & Attribute.Required;
+    type: Attribute.Enumeration<
+      [
+        'short_text',
+        'long_text',
+        'number',
+        'date',
+        'date_time',
+        'time',
+        'select',
+        'honey_pot'
+      ]
+    >;
+  };
+}
+
+export interface FormManagerNotifyService extends Schema.Component {
+  collectionName: 'components_form_manager_notify_services';
+  info: {
+    displayName: 'Notify Service';
+    icon: 'file';
+  };
+  attributes: {
+    key: Attribute.String & Attribute.Required & Attribute.Unique;
+    serviceUUID: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface FormManagerNotifyServiceSel extends Schema.Component {
+  collectionName: 'components_form_manager_notify_service_sel';
+  info: {
+    displayName: 'Notify Service Selection';
+    icon: 'file';
+  };
+  attributes: {
+    key: Attribute.Enumeration<['email']> &
+      Attribute.Required &
+      Attribute.Unique;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -193,6 +242,9 @@ declare module '@strapi/types' {
       'utility.seo-meta': UtilitySeoMeta;
       'utility.seo-robots': UtilitySeoRobots;
       'utility.seo': UtilitySeo;
+      'form-manager.form-field': FormManagerFormField;
+      'form-manager.notify-service': FormManagerNotifyService;
+      'form-manager.notify-service-sel': FormManagerNotifyServiceSel;
     }
   }
 }

@@ -10,4 +10,6 @@ export default ({ env }) => ({
       salt: env('TRANSFER_TOKEN_SALT'),
     },
   },
+  host: env("HOST", "0.0.0.0"),
+  port: 3000
 });
