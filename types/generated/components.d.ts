@@ -194,8 +194,7 @@ export interface FormManagerFormField extends Schema.Component {
         'date',
         'date_time',
         'time',
-        'select',
-        'honey_pot'
+        'select'
       ]
     >;
   };
@@ -208,21 +207,24 @@ export interface FormManagerNotifyService extends Schema.Component {
     icon: 'file';
   };
   attributes: {
-    key: Attribute.String & Attribute.Required & Attribute.Unique;
-    serviceUUID: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface FormManagerNotifyServiceSel extends Schema.Component {
-  collectionName: 'components_form_manager_notify_service_sel';
-  info: {
-    displayName: 'Notify Service Selection';
-    icon: 'file';
-  };
-  attributes: {
     key: Attribute.Enumeration<['email']> &
       Attribute.Required &
       Attribute.Unique;
+    data: Attribute.JSON;
+  };
+}
+
+export interface FormManagerVerificationService extends Schema.Component {
+  collectionName: 'components_form_manager_verification_services';
+  info: {
+    displayName: 'Verification Honeypot';
+    icon: 'file';
+  };
+  attributes: {
+    key: Attribute.Enumeration<['honeypot']> &
+      Attribute.Required &
+      Attribute.Unique;
+    data: Attribute.JSON;
   };
 }
 
@@ -244,7 +246,7 @@ declare module '@strapi/types' {
       'utility.seo': UtilitySeo;
       'form-manager.form-field': FormManagerFormField;
       'form-manager.notify-service': FormManagerNotifyService;
-      'form-manager.notify-service-sel': FormManagerNotifyServiceSel;
+      'form-manager.verification-service': FormManagerVerificationService;
     }
   }
 }

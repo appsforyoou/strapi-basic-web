@@ -494,7 +494,6 @@ export interface PluginStrapiFormManagerFormSetting extends Schema.SingleType {
     comment: '';
   };
   attributes: {
-    notifyServices: Attribute.Component<'form-manager.notify-service', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -526,7 +525,11 @@ export interface PluginStrapiFormManagerFmForm extends Schema.CollectionType {
   attributes: {
     key: Attribute.String;
     displayName: Attribute.String;
-    notifyService: Attribute.Component<'form-manager.notify-service-sel', true>;
+    verificationServices: Attribute.Component<
+      'form-manager.verification-service',
+      true
+    >;
+    notifyService: Attribute.Component<'form-manager.notify-service', true>;
     fields: Attribute.Component<'form-manager.form-field', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
