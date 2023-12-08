@@ -8,12 +8,12 @@ export default {
     config: {
       verificationServices: {
         honeypot: {
-          strapiServiceUUID: 'plugin::strapi-form-manager.verification-service.honeypot',
+          strapiServiceUUID: 'plugin::strapi-form-manager.validation.honeypot',
         }
       },
       notifyServices: {
         email: {
-          strapiServiceUUID: 'plugin::strapi-form-manager.notify-service.email',
+          strapiServiceUUID: 'plugin::strapi-form-manager.notification.email',
         }
       }
     }

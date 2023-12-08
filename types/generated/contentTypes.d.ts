@@ -529,7 +529,7 @@ export interface PluginStrapiFormManagerFmForm extends Schema.CollectionType {
       'form-manager.verification-service',
       true
     >;
-    notifyService: Attribute.Component<'form-manager.notify-service', true>;
+    notifyServices: Attribute.Component<'form-manager.notify-service', true>;
     fields: Attribute.Component<'form-manager.form-field', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
