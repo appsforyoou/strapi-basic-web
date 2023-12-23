@@ -3,39 +3,39 @@ import { revalidatePath } from '../../../../helpers/utils';
 
 export default {
   afterCreate() {
-    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=articles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=webArticles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
   afterCreateMany() {
-    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=articles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=webArticles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
 
   afterUpdate() {
-    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=articles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=webArticles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
   afterUpdateMany() {
-    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=articles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=webArticles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
 
   afterDelete() {
-    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=articles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=webArticles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
   },
   afterDeleteMany() {
-    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=articles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
+    const req = httpAdapter(revalidatePath).get(`${revalidatePath}?tag=webArticles&secret=${process.env.NEXTJS_REVALIDATE_TAG_TOKEN}`);
     req.on('error', (error) => {
       console.error(error);
     });
